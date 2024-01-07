@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Moja Aplikacija</a>
+</nav>
+
+<div class="container mt-4">
+    <% if (rezervacija) { %>
+    <div class="container mt-4">
+        <h2>Detalji Rezervacije</h2>
+        <div class="card mb-4">
+            <div class="card-header">Zaglavlje Rezervacije</div>
+            <div class="card-body">
+                <p>ID Rezervacije: <%= rezervacija.rezervacija_ID %></p>
+                <p>Datum Rezervacije: <%= new Date(rezervacija.datum_rezervacije).toLocaleDateString() %></p>
+                <p>Ime Kupca: <%= rezervacija.ime_kupca %></p>
+                <p>Alotman ID: <%= rezervacija.alotman_ID %></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card">
+                <div class="card-header">Stavke Rezervacije</div>
+                <div class="card-body">
+                    <% stavke.forEach(function(stavka) { %>
+                        <div class="mb-3">
+                            <h5 class="card-title">Stavka ID: <%= stavka.stavke_ID %></h5>
+                            <p>Naziv Usluge: <%= stavka.naziv_usluge %></p>
+                            <p>Datum Od: <%= new Date(stavka.datum_od).toLocaleDateString() %></p>
+                            <p>Datum Do: <%= new Date(stavka.datum_do).toLocaleDateString() %></p>
+                            <p>Broj Komada: <%= stavka.broj_komada %></p>
+                            <p>Cijena: <%= stavka.cijena %></p>
+                            <p>Broj Odraslih: <%= stavka.broj_odraslih %></p>
+                            <p>Broj Djece: <%= stavka.broj_djece %></p>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    <% } else { %>
+        <p>Rezervacija nije pronađena.</p>
+    <% } %>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

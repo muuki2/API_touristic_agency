@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vrste Usluga</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  <style>
+    #pageTitle {
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    #uslugeTable {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Moja Aplikacija</a>
+</nav>
+
+<div class="container">
+  <h2 id="pageTitle">Vrste Usluga</h2>
+  <table id="uslugeTable" class="table table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Naziv</th>
+      <th>Cijena</th>
+      <th>Akcije</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% results.forEach(function(usluga) { %>
+      <tr>
+        <td><%= usluga.usluga_ID %></td>
+        <td><%= usluga.naziv_usluge %></td>
+        <td><%= usluga.cijena %></td>
+        <td>
+          <a href = "/usluge/usluga_edit/<%= usluga.usluga_ID %>" id = "Edit" class="btn btn-secondary">Edit</a>
+          <button class="btn-delete btn btn-danger" data-usluga-id="<%= usluga.usluga_ID %>">Delete</button>
+        </td>
+
+
+      </tr>
+    <% }); %>
+    </tbody>
+  </table>
+</div>
+<script>
+  document.getElementById('Edit').addEventListener('click', function() {
+    window.location.href = '/usluge/usluga_edit';
+  });
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+  $(document).on('click', '.btn-delete', function() {
+    const uslugaId = $(this).data('usluga-id');
+    const row = $(this).closest('tr');
+
+    if (confirm('Da li ste sigurni da želite da obrišete ovu uslugu?')) {
+      $.ajax({
+        url: `/usluge/usluga_delete/${uslugaId}`,
+        type: 'DELETE',
+        success: function(response) {
+          row.remove();
+          alert('Usluga je uspešno obrisana.');
+        },
+        error: function(xhr, status, error) {
+          alert('Došlo je do greške prilikom brisanja usluge: ' + error);
+        }
+      });
+    }
+  });
+</script>
+</body>
+
+</html>

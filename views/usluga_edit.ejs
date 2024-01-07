@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Usluge</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  <style>
+    .card-header {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Moja Aplikacija</a>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-header">
+          Edit Usluge
+        </div>
+        <div class="card-body">
+          <form action="/usluge/usluga_edit/<%= usluga.usluga_ID%>" method="post">
+            <div class="form-group">
+              <label for="naziv">Naziv Usluge</label>
+              <input type="text" class="form-control" id="naziv" name="naziv" value="<%= usluga.naziv_usluge %>" required>
+            </div>
+            <div class="form-group">
+              <label for="cijena">Cijena usluge</label>
+              <input type="number" class="form-control" id="cijena" name="cijena" value=" <%= usluga.cijena%>" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Ažuriraj Uslugu</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

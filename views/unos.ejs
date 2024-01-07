@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unos Datuma</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+    <style>
+        .card-header {
+            font-size: 1.5rem; /* Povećavanje veličine fonta */
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Moja Aplikacija</a>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Unos Parametara
+                </div>
+                <div class="card-body">
+                    <form action="/unos/ruta_za_izvjestaj" method="post">
+                        <div class="form-group">
+                            <label for="datum_od1">Datum od 1</label>
+                            <input type="date" class="form-control" id="datum_od1" name="datum_od1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="datum_do1">Datum do 1</label>
+                            <input type="date" class="form-control" id="datum_do1" name="datum_do1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="datum_od2">Datum od 2</label>
+                            <input type="date" class="form-control" id="datum_od2" name="datum_od2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="datum_do2">Datum do 2</label>
+                            <input type="date" class="form-control" id="datum_do2" name="datum_do2" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Pošalji</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
