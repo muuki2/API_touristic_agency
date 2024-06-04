@@ -1,50 +1,40 @@
-# Turistička Agencija Web Aplikacija
+# Tourist Agency Web Application
+================================
 
-## Opis Projekta
+## Project Description
 
-Ova web aplikacija je razvijena kao dio projekta iz baza podataka. Cilj aplikacije je da omogući korisnicima da upravljaju rezervacijama, uslugama, alotmanima i pruži mogućnost generisanja različitih izveštaja u turističkoj agenciji.
+This web application was developed as part of a database project. The goal of the application is to enable users to manage reservations, services, allotments, and generate various reports in a tourist agency.
 
-### Glavne Karakteristike
+### Main Features
 
-- **Upravljanje Rezervacijama:** Mogućnost pregleda, dodavanja, izmene i brisanja rezervacija.
-- **Upravljanje Uslugama:** Pregled, dodavanje, izmena i brisanje usluga.
-- **Upravljanje Alotmanima:** Dodavanje i pregled alotmana i njihovih stavki.
-- **Generisanje Izveštaja:** Funkcionalnost za generisanje izveštaja o uslugama i rezervacijama u .txt formatu.
+* **Reservation Management:** Ability to view, add, edit, and delete reservations.
+* **Service Management:** View, add, edit, and delete services.
+* **Allotment Management:** Add and view allotments and their items.
+* **Report Generation:** Functionality to generate reports on services and reservations in.txt format.
 
-## Tehnologije
+## Technologies
 
-Projekat je razvijen koristeći sljedeće tehnologije:
+* **Backend:** Node.js, Express.js
+* **Frontend:** EJS, HTML, CSS, Bootstrap, JavaScript
+* **Database:** MySQL
+* **Additional Libraries:** dotenv, morgan, cookie-parser, http-errors, mysql2
 
-- **Backend:** Node.js, Express.js
-- **Frontend:** EJS, HTML, CSS, Bootstrap, JavaScript
-- **Baza podataka:** MySQL
-- **Dodatne biblioteke:** dotenv, morgan, cookie-parser, http-errors, mysql2
+## Installation and Running
 
-## Instalacija i Pokretanje
+To install and run the project, follow these steps:
 
-Da biste instalirali i pokrenuli projekat, slijedite ove korake:
+1. Clone the repository: `git clone [URL of your Git repository]`
+2. Enter the project directory: `cd [directory name]`
+3. Install the necessary dependencies: `npm install`
+4. Create a `.env` file with the necessary database configurations.
+5. Start the server: `npm start`
 
-1. Klonirajte repozitorijum:
-git clone [URL vašeg Git repozitorijuma]
+## Usage
 
-2. Uđite u direktorijum projekta:
-cd [ime direktorijuma]
+After starting, the application is available at `http://localhost:3000`. You can navigate through the application to manage reservations, services, allotments, and generate reports.
 
-3. Instalirajte potrebne zavisnosti:
-npm install
-
-4. Kreirajte .env fajl sa potrebnim konfiguracijama za bazu podataka.
-5. Pokrenite server: npm start
-
-
-## Korišćenje
-
-Nakon pokretanja, aplikacija je dostupna na `http://localhost:3000`. Navigacijom kroz aplikaciju možete upravljati rezervacijama, uslugama, alotmanima i generisati izveštaje.
-
-## Autor
+## Author
 
 Murat Kolic
-
----
 
 
